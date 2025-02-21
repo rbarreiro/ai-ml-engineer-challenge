@@ -1,0 +1,10 @@
+FastAPI
+uvicorn
+pandas
+scikit-learn
+numpy
+pydantic
+joblib
+pytest
+pytest-cov
+docker-compose
