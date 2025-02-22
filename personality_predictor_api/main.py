@@ -1,11 +1,9 @@
 from fastapi import FastAPI
-from routes import setup_routes
+from personality_predictor.api.routes import router
 
 app = FastAPI()
 
-# Middleware can be added here if needed
-
-setup_routes(app)
+app.include_router(router)
 
 if __name__ == "__main__":
     import uvicorn

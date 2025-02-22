@@ -1,8 +1,0 @@
-FastAPI
-uvicorn
-pandas
-scikit-learn
-numpy
-pydantic
-pytest
-pytest-cov
