@@ -1,14 +1,4 @@
-from sklearn.feature_extraction.text import CountVectorizer
-import re
 
-def clean_text(text):
-    text = text.lower()  # Convert to lowercase
-    text = re.sub(r'\d+', '', text)  # Remove numbers
-    text = re.sub(r'[^\w\s]', '', text)  # Remove punctuation
-    return text
-
-def tokenize_and_vectorize(texts):
-    cleaned_texts = [clean_text(text) for text in texts]
-    vectorizer = CountVectorizer()
-    vectors = vectorizer.fit_transform(cleaned_texts)
-    return vectors, vectorizer
+id2label = { 0:'INTJ',1:'INTP',2:'ISFJ',3:'ISFP',4:'ISTJ',5:'ISTP',6:'ENFJ',7:'ENFP',8:'ENTJ',9:'ENTP',10:'ESFJ',11:'ESFP',12:'ESTJ',13:'ESTP',14:'INFJ',15:'INFP'}
+label2id = { 'INTJ':0,'INTP':1,'ISFJ':2,'ISFP':3,'ISTJ':4,'ISTP':5,'ENFJ':6,'ENFP':7,'ENTJ':8,'ENTP':9,'ESFJ':10,'ESFP':11,'ESTJ':12,'ESTP':13,'INFJ':14,'INFP':15}
+num_labels = 16
