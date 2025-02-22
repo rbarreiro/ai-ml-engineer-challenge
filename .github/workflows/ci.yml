@@ -32,4 +32,5 @@ jobs:
 
       - name: Build Docker image
         run: |
+          cd personality_predictor_api
           docker build -t personality-type-predictor-api .
