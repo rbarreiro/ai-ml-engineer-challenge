@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from api.main import app
+from personality_predictor.api.app import app
 
 client = TestClient(app)
 

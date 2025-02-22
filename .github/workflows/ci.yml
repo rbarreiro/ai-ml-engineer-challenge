@@ -25,7 +25,7 @@ jobs:
         run: |
           cd personality_predictor_api
           python -m pip install --upgrade pip
-          pip install pytest
+          pip install pytest httpx
           pip install .
 
       - name: Run tests

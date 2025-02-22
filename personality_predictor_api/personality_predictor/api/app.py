@@ -1,4 +1,5 @@
 import os
+from fastapi import FastAPI
 from fastapi import APIRouter
 from pydantic import BaseModel
 
@@ -20,3 +21,8 @@ async def predict_personality_type(text_input: TextInput):
         "mbti_type": pred[0]["label"],
         "confidence": pred[0]["score"]
     }
+
+
+app = FastAPI()
+
+app.include_router(router)
