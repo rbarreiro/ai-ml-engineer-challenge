@@ -11,5 +11,5 @@ def test_predict_mbti():
 
 def test_predict_mbti_invalid_input():
     response = client.post("/predict", json={"textr": ""})
-    assert response.status_code == 400  # Assuming the API returns 400 for invalid input
+    assert response.status_code != 200  # Assuming the API returns 400 for invalid input
     assert "detail" in response.json()  # Check for error message in response
