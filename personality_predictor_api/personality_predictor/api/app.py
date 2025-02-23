@@ -5,8 +5,7 @@ from pydantic import BaseModel
 
 from transformers import pipeline
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "models", "my_mbti", "checkpoint-5967")
-classifier = pipeline("text-classification", model=MODEL_PATH)
+classifier = pipeline("text-classification", model="rbarreiro/my_mbti")
 
 router = APIRouter()
 

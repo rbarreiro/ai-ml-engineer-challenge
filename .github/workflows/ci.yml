@@ -33,7 +33,15 @@ jobs:
           cd personality_predictor_api
           pytest tests
 
-      - name: Build Docker image
-        run: |
-          cd personality_predictor_api
-          docker build -t personality-type-predictor-api .
+          - name: Login to Docker Hub
+          uses: docker/login-action@v3
+          with:
+            username: ${{ secrets.DOCKERHUB_USERNAME }}
+            password: ${{ secrets.DOCKERHUB_TOKEN }}
+  
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: personality_predictor_api
+          push: true
+          tags: ruibarreiro/personality-type-predictor:latest

@@ -14,6 +14,8 @@ COPY setup.py ./
 RUN pip install .
 COPY main.py ./
 
+RUN python -c 'from transformers import pipeline;classifier = pipeline("text-classification", model="rbarreiro/my_mbti")'
+
 # Expose the API port
 EXPOSE 8000
 
