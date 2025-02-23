@@ -6,7 +6,6 @@ RUN pip install transformers uvicorn fastapi pydantic
 # Set the working directory
 WORKDIR /app
 
-COPY models/ ./models/
 COPY personality_predictor/ ./personality_predictor/
 COPY setup.py ./
 
